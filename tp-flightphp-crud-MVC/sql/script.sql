@@ -20,7 +20,7 @@ CREATE TABLE t_renbourssement(
     volanaverina FLOAT(10, 2) NOT NULL,
     date DATE NOT NULL,
 
-    FOREIGN KEY (idpret) REFERENCES t_pret(id)
+    FOREIGN KEY (idpret) REFERENCES t_typepret(id)
 );
 
 CREATE TABLE t_client(
@@ -28,6 +28,11 @@ CREATE TABLE t_client(
     nom VARCHAR(50) NOT NULL,
     argentGlobal FLOAT(10, 2) NOT NULL
 );
+
+INSERT INTO t_client (nom, argentGlobal) VALUES
+("Client 1", 1000.00),
+("Client 2", 2000.00),
+("Client 3", 3000.00);
 
 CREATE TABLE t_pret(
     id INT PRIMARY KEY AUTO_INCREMENT,

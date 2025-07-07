@@ -12,10 +12,10 @@
             <nav>
                 <a href="" class=""></a>
                     <ul class="menu">
-                        <li><a href="">Accueil</a></li>
+                        <li><a href="/accueil">Accueil</a></li>
                         <li><a href="">Ajout-Fond</a></li>
                         <li><a href="">Insertion-types-de-prets</a></li>
-                        <li><a href="">Insertion-prets</a></li>
+                        <li><a href="/Insertion_prets">Insertion-prets</a></li>
                         <li><a href="">Argent-Rendue</a></li>
                         <li><a href="">Etat-client</a></li>
                         <li><a href="">Benefice-Interet</a></li>
