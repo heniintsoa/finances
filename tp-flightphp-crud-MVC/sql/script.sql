@@ -11,7 +11,7 @@ CREATE TABLE t_EF(
 CREATE TABLE t_typepret(
     id INT PRIMARY KEY AUTO_INCREMENT,
     nom VARCHAR(50) NOT NULL,
-    taux-mois INT
+    taux_mois INT
 );
 
 CREATE TABLE t_renbourssement(
@@ -41,3 +41,5 @@ CREATE TABLE t_pret(
     FOREIGN KEY (idtypepret) REFERENCES t_typepret(id)
 );
 
+INSERT INTO t_typepret (nom , taux_mois) VALUES
+("Pret immobilier" , 10);
