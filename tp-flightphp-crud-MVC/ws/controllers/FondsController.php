@@ -21,6 +21,7 @@
             
             Fonds::create($data);
             Flight::redirect('/ajout-fond?success=1');
+            }
         }
     }
 ?>
