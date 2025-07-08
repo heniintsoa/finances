@@ -13,12 +13,14 @@ CREATE TABLE t_typepret(
     nom VARCHAR(50) NOT NULL,
     taux_mois INT
 );
+INSERT INTO t_typepret (nom , taux_mois) VALUES
+("Pret immobilier" , 10);
 
 CREATE TABLE t_renbourssement(
     id INT PRIMARY KEY AUTO_INCREMENT,
     idpret INT,
     volanaverina FLOAT(10, 2) NOT NULL,
-    date DATE NOT NULL,
+    mois_rendu INT NOT NULL,
 
     FOREIGN KEY (idpret) REFERENCES t_typepret(id)
 );
@@ -45,6 +47,10 @@ CREATE TABLE t_pret(
     FOREIGN KEY (idclient) REFERENCES t_client(id),
     FOREIGN KEY (idtypepret) REFERENCES t_typepret(id)
 );
+INSERT INTO t_pret (idclient,idtypepret, mois_debut, mois_fin, montant_par_mois) VALUES
+    -> (1, 1, 2, 6, 200),
+    -> (2, 1, 1, 10, 200),
+    -> (3, 1, 7, 9, 1000);
 
 CREATE TABLE t_fonds(
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -83,5 +89,4 @@ LEFT JOIN t_pret p ON f.id_pret = p.id
 LEFT JOIN t_client c ON p.idclient = c.id
 LEFT JOIN t_typepret t ON p.idtypepret = t.id;
 
-INSERT INTO t_typepret (nom , taux_mois) VALUES
-("Pret immobilier" , 10);
+
