@@ -6,3 +6,4 @@ Flight::route('GET /ajout-fond', function() {
     // Render the template with the specified page
     Flight::render('Template', ['page' => $page]);
 });
+

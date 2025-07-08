@@ -46,7 +46,7 @@ CREATE TABLE t_pret(
     FOREIGN KEY (idtypepret) REFERENCES t_typepret(id)
 );
 
-CREATE TABLE fonds(
+CREATE TABLE t_fonds(
     id INT PRIMARY KEY AUTO_INCREMENT,
     montant FLOAT(10, 2) NOT NULL,
     type_operation ENUM('entree', 'sortie') NOT NULL DEFAULT 'entree',
