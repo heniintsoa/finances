@@ -78,7 +78,7 @@ SELECT
     t.nom AS type_pret,
     t.taux_mois
 
-FROM fonds f
+FROM t_fonds f
 LEFT JOIN t_pret p ON f.id_pret = p.id
 LEFT JOIN t_client c ON p.idclient = c.id
 LEFT JOIN t_typepret t ON p.idtypepret = t.id;

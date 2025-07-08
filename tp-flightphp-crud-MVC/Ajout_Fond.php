@@ -24,9 +24,6 @@
         <label>Description :</label>
         <input type="text" name="descri"><br>
 
-        <label>ID du prêt (optionnel) :</label>
-        <input type="number" name="id_pret"><br>
-
         <button type="submit">Ajouter</button>
     </form>
 
