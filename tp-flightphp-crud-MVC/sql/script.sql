@@ -62,6 +62,8 @@ CREATE TABLE t_fonds(
 
     FOREIGN KEY (id_pret) REFERENCES t_pret(id)
 );
+INSERT INTO t_fonds (montant, type_operation, date_operation, descri, id_pret) VALUES 
+(50000.00, 'entree', '2025-07-08', 'Investissement initial', 1),
 
 CREATE VIEW vue_fonds_details AS
 SELECT 
