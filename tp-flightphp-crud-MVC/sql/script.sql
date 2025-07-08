@@ -50,8 +50,38 @@ CREATE TABLE fonds(
     id INT PRIMARY KEY AUTO_INCREMENT,
     montant FLOAT(10, 2) NOT NULL,
     type_operation ENUM('entree', 'sortie') NOT NULL DEFAULT 'entree',
-    descri VARCHAR(100)
-)
+    date_operation DATE,
+    descri VARCHAR(100),
+    id_pret INT,
+
+    FOREIGN KEY (id_pret) REFERENCES t_pret(id)
+);
+
+CREATE VIEW vue_fonds_details AS
+SELECT 
+    f.id AS id_fonds,
+    f.montant,
+    f.type_operation,
+    f.date_operation,
+    f.descri AS description,
+    
+    p.id AS id_pret,
+    p.mois_debut,
+    p.mois_fin,
+    p.montant_par_mois,
+
+    c.id AS id_client,
+    c.nom AS nom_client,
+    c.argentGlobal,
+
+    t.id AS id_typepret,
+    t.nom AS type_pret,
+    t.taux_mois
+
+FROM fonds f
+LEFT JOIN t_pret p ON f.id_pret = p.id
+LEFT JOIN t_client c ON p.idclient = c.id
+LEFT JOIN t_typepret t ON p.idtypepret = t.id;
 
 INSERT INTO t_typepret (nom , taux_mois) VALUES
 ("Pret immobilier" , 10);
